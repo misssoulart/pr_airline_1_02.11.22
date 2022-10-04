@@ -1,16 +1,26 @@
 package ru.kataproject.p_sm_airlines_1.controller;
 
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
-@Api("MainController")
-public class MainController {
+@Tag(name = "Main example controller")
+@RequestMapping(MainController.BASE_NAME)
+public interface MainController {
 
-    @GetMapping("/")
-    public ModelAndView index() {
-        return new ModelAndView("index");
-    }
+    String MAJOR_VERSION = "/v1";
+    String BASE_NAME = MAJOR_VERSION + "/main";
+
+    @GetMapping()
+    @Operation(summary = "Get index", description = "Returnes main default page")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Page successfully returned", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Page not found", content = @Content)
+    })
+    ResponseEntity<String> index();
 }
