@@ -24,8 +24,17 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        storage_engine: innodb
         current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
         format_sql: true
         jdbc:
           time_zone: Europe/Moscow
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  jackson:
+    serialization:
+      indent-output: true
+logging:
+  level:
+    root: warn
+    ru.kataproject.p_sm_airlines_1: info
