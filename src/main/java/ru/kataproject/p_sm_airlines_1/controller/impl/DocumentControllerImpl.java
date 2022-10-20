@@ -1,6 +1,7 @@
 package ru.kataproject.p_sm_airlines_1.controller.impl;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -18,6 +19,7 @@ import java.util.List;
  * @author Mishin Yura (mishin.inbox@gmail.com)
  * @since 06.10.2022
  */
+@Log4j2
 @RestController
 @RequiredArgsConstructor
 public class DocumentControllerImpl implements DocumentController {
@@ -34,6 +36,7 @@ public class DocumentControllerImpl implements DocumentController {
     @Override
     @ResponseStatus(HttpStatus.OK)
     public List<DocumentDto> getAllDocuments() {
+        log.info("executed getAllDocuments() method");
         return documentService.getAllDocuments();
     }
 
@@ -46,6 +49,7 @@ public class DocumentControllerImpl implements DocumentController {
     @Override
     @ResponseStatus(HttpStatus.OK)
     public DocumentDto getDocumentById(@PathVariable Long id) {
+        log.info("executed getDocumentById() method");
         return documentService.getDocumentById(id);
     }
 
@@ -57,6 +61,7 @@ public class DocumentControllerImpl implements DocumentController {
     @Override
     @ResponseStatus(HttpStatus.CREATED)
     public void createDocument(DocumentDto documentDto) {
+        log.info("executed createDocument() method");
         documentService.createDocument(documentDto);
     }
 
@@ -68,6 +73,7 @@ public class DocumentControllerImpl implements DocumentController {
     @Override
     @ResponseStatus(HttpStatus.OK)
     public void updateDocument(DocumentDto documentDto) {
+        log.info("executed updateDocument() method");
         documentService.updateDocument(documentDto);
     }
 
@@ -79,6 +85,7 @@ public class DocumentControllerImpl implements DocumentController {
     @Override
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteDocumentById(Long id) {
+        log.info("executed deleteDocumentById() method");
         documentService.deleteDocumentById(id);
     }
 }

@@ -1,6 +1,7 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changeset/create-route-table.sql
-      file: db/changelog/stub.sql
-      file: db/changelog/documents/db.changelog-create-table-documents.sql
-      file: db/changelog/documents/db.changelog-seed-table-documents.sql
+      file: db/changelog/route/create-route-table.sql
+  - include:
+      file: db/changelog/documents/create-table-documents.sql
+  - include:
+      file: db/changelog/documents/seed-table-documents.sql
