@@ -44,7 +44,7 @@ public class FlightDto {
     String aircraft;
     @NonNull
     @NotEmpty
-    @Schema(description = "flight status", example = "ACCORDING_TO_PLAN", required = true)
+    @Schema(description = "flight status", example = "PLANNED", required = true)
     FlightStatus flightStatus;
     @NonNull
     @NotEmpty
