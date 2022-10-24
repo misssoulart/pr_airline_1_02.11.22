@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/stub.sql
+      file: db/changelog/documents/db.changelog-create-table-documents.sql
+  - include:
+      file: db/changelog/documents/db.changelog-seed-table-documents.sql

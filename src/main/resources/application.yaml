@@ -34,7 +34,3 @@ spring:
   jackson:
     serialization:
       indent-output: true
-logging:
-  level:
-    root: warn
-    ru.kataproject.p_sm_airlines_1: info
