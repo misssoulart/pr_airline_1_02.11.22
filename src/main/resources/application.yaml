@@ -34,3 +34,6 @@ spring:
   jackson:
     serialization:
       indent-output: true
+
+springdoc:
+  default-produces-media-type: application/json  #added @mvkola
