@@ -1,5 +1,6 @@
 package ru.kataproject.p_sm_airlines_1.database;
 
+import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Mishin Yura (mishin.inbox@gmail.com)
  * @since 11.10.2022
  */
-@Slf4j
+@Log4j2
 @DisplayName("Tests Database schema")
 @SpringBootTest
 class SchemaTest {
@@ -30,10 +31,13 @@ class SchemaTest {
 
     @DisplayName("tests database has essential tables")
     @Test
-    void shouldTestSchema() throws Exception {
+    void shouldHasTables() throws Exception {
         // given
         Set<String> tablesExpected = Set.of(
-                "documents"
+                "documents",
+                "flight",
+                "passengers",
+                "route"
         );
 
         // when
@@ -44,7 +48,7 @@ class SchemaTest {
                 tablesActual.add(rs.getString("TABLE_NAME").toLowerCase());
             }
         }
-        log.info("Database has tables: {}", tablesActual.toString());
+        log.info("\n\nDatabase has tables: {}\n", tablesActual.toString());
 
         // then
         assertThat(tablesActual).containsAll(tablesExpected);
