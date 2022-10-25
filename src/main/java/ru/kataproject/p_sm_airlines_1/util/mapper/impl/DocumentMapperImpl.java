@@ -3,7 +3,6 @@ package ru.kataproject.p_sm_airlines_1.util.mapper.impl;
 import org.springframework.stereotype.Component;
 import ru.kataproject.p_sm_airlines_1.entity.Document;
 import ru.kataproject.p_sm_airlines_1.entity.Dto.DocumentDto;
-import ru.kataproject.p_sm_airlines_1.util.mapper.DocumentMapper;
 
 /**
  * Class DocumentMapperImpl.
@@ -12,8 +11,8 @@ import ru.kataproject.p_sm_airlines_1.util.mapper.DocumentMapper;
  * @author Mishin Yura (mishin.inbox@gmail.com)
  * @since 12.10.2022
  */
-@Component
-public class DocumentMapperImpl implements DocumentMapper {
+@Component("documentMapperImplBasic")
+public class DocumentMapperImpl implements ru.kataproject.p_sm_airlines_1.util.mapper.DocumentMapper {
     /**
      * Method maps DocumentDto to Document.
      *
