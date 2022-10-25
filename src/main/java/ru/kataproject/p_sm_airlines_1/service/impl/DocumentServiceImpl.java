@@ -1,6 +1,6 @@
 package ru.kataproject.p_sm_airlines_1.service.impl;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +22,6 @@ import java.util.stream.Collectors;
  * @since 06.10.2022
  */
 @Service
-@RequiredArgsConstructor
 public class DocumentServiceImpl implements DocumentService {
     /**
      * Document Repository.
@@ -33,6 +32,14 @@ public class DocumentServiceImpl implements DocumentService {
      * Document Mapper.
      */
     private final DocumentMapper mapper;
+
+    public DocumentServiceImpl(
+            DocumentRepository documentRepository,
+            @Qualifier("documentMapperImplBasic") DocumentMapper mapper
+    ) {
+        this.documentRepository = documentRepository;
+        this.mapper = mapper;
+    }
 
     /**
      * Method gets all documents.

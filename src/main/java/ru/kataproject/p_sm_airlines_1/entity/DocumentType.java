@@ -16,7 +16,12 @@ public enum DocumentType {
     /**
      * National passport.
      */
-    NATIONAL_PASSPORT("National passport");
+    NATIONAL_PASSPORT("National passport"),
+
+    /**
+     * International passport.
+     */
+    INTERNATIONAL_PASSPORT("International passport");
 
     /**
      * Enum value.
