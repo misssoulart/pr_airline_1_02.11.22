@@ -36,4 +36,4 @@ spring:
       indent-output: true
 
 springdoc:
-  default-produces-media-type: application/json  #added @mvkola
+  default-produces-media-type: application/json
