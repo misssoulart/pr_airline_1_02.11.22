@@ -2,9 +2,8 @@ package ru.kataproject.p_sm_airlines_1.entity;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 /**
  * The Seat class represents a seat in an aircraft cabin.
@@ -31,14 +30,6 @@ public class Seat {
     private Integer fare;
     private Boolean isRegistered;
     private Boolean isSold;
+    @Enumerated(EnumType.STRING)
     private SeatCategory seatCategory;
-
-    public Seat(String aircraft, String seatNumber, Integer fare, @Value("false") Boolean isRegistered, @Value("false") Boolean isSold, SeatCategory seatCategory) {
-        this.aircraft = aircraft;
-        this.seatNumber = seatNumber;
-        this.fare = fare;
-        this.isRegistered = isRegistered;
-        this.isSold = isSold;
-        this.seatCategory = seatCategory;
-    }
 }
