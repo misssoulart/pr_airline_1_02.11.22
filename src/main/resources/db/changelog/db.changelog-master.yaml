@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/documents/create-table-documents.sql
   - include:
       file: db/changelog/documents/seed-table-documents.sql
+  - include:
+      file: db/changelog/seat/create-table-seat.sql
