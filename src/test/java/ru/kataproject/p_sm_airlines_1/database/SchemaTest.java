@@ -37,7 +37,8 @@ class SchemaTest {
                 "documents",
                 "flight",
                 "passengers",
-                "route"
+                "route",
+                "seat"
         );
 
         // when
