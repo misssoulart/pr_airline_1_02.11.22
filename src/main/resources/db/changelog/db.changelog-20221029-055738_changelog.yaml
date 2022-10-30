@@ -1,0 +1,125 @@
+databaseChangeLog:
+- changeSet:
+    id: 1667023062783-7
+    author: black (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: flightPK
+            name: id
+            type: BIGINT
+        - column:
+            name: aircraft
+            type: VARCHAR(255)
+        - column:
+            name: arrival_date_time
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: departure_date_time
+            type: TIMESTAMP WITHOUT TIME ZONE
+        - column:
+            name: destination_from
+            type: VARCHAR(255)
+        - column:
+            name: destination_to
+            type: VARCHAR(255)
+        - column:
+            name: flight_status
+            type: INTEGER
+        - column:
+            name: inflight_services
+            type: VARCHAR(255)
+        tableName: flight
+- changeSet:
+    id: 1667023062783-8
+    author: black (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: passengersPK
+            name: id
+            type: BIGINT
+        - column:
+            name: birthday
+            type: date
+        - column:
+            name: first_name
+            type: VARCHAR(255)
+        - column:
+            name: last_name
+            type: VARCHAR(255)
+        - column:
+            name: middle_name
+            type: VARCHAR(255)
+        - column:
+            name: mobile_num
+            type: VARCHAR(255)
+        - column:
+            name: nick_name
+            type: VARCHAR(255)
+        - column:
+            name: password
+            type: VARCHAR(255)
+        - column:
+            name: email
+            type: VARCHAR(255)
+        tableName: passengers
+- changeSet:
+    id: 1667023062783-1
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: aircraft
+        tableName: seat
+- changeSet:
+    id: 1667023062783-2
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: boolean
+        columnName: is_registered
+        tableName: seat
+- changeSet:
+    id: 1667023062783-3
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: boolean
+        columnName: is_sold
+        tableName: seat
+- changeSet:
+    id: 1667023062783-4
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: bigint
+        columnName: passenger_id
+        tableName: documents
+- changeSet:
+    id: 1667023062783-5
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: seat_category
+        tableName: seat
+- changeSet:
+    id: 1667023062783-6
+    author: black (generated)
+    changes:
+    - dropNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: seat_number
+        tableName: seat
+
