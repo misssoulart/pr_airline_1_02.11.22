@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1665875771186-1
+      author: nanomachine (generated)
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_destinations
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+              - column:
+                  name: country_code
+                  type: VARCHAR(255)
+              - column:
+                  name: country_name
+                  type: VARCHAR(255)
+              - column:
+                  name: airport_name
+                  type: VARCHAR(255)
+              - column:
+                  name: airport_code
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: timezone
+                  type: INT
+            tableName: destinations
+
